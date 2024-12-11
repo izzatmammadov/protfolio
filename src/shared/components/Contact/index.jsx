@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import sendL from "../../../assets/icons/send_white.png";
 import sendG from "../../../assets/icons/send_gray.png";
 import { useTheme } from "../../../context/ThemeContext";
 
 const Contact = () => {
   const { theme } = useTheme();
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const validateEmail = (value) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(value)) {
+      setEmailError("Please enter a valid email address!");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    validateEmail(value);
+  };
+
   return (
     <section
       id="contact"
@@ -35,10 +53,18 @@ const Contact = () => {
         className="flex flex-col gap-4 sm:w-1/2 sm:px-0 px-4 mx-auto"
       >
         <input
-          className="h-14 p-2 outline-none rounded shadow shadow-gray-300"
+          className={`h-14 p-2 outline-none rounded shadow ${
+            emailError ? "border-red-500" : "shadow-gray-300"
+          }`}
           placeholder="Your e-mail address"
           type="email"
+          value={email}
+          onChange={handleEmailChange}
+          onBlur={() => validateEmail(email)}
         />
+        {emailError && (
+          <p className="text-red-500 text-sm">{emailError}</p>
+        )}
         <textarea
           className="h-48 p-2 capitalize outline-none rounded shadow shadow-gray-300"
           placeholder="Your message"

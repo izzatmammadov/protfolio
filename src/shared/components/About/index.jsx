@@ -10,7 +10,10 @@ const About = () => {
         </h2>
         <span className="h-1 sm:w-[40%] w-[20%] bg-gray-900 dark:bg-white rounded-full"></span>
       </div>
-      <p data-aos="fade-up" className="text-gray-900 flex items-centerh-full dark:text-white text-center text-xl sm:px-8 px-3 sm:mt-16 mt-8 leading-relaxed ">
+      <p
+        data-aos="fade-up"
+        className="text-gray-900 flex items-centerh-full dark:text-white text-center sm:text-xl text-lg sm:px-8 px-3 sm:mt-16 mt-8 leading-relaxed "
+      >
         Hi, I'm a Frontend Developer with 3+ years of experience. I'm passionate
         about web development and I love developing user-friendly,
         high-performance and scalable applications with modern technologies. I'm

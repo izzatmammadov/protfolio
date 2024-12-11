@@ -5,6 +5,8 @@ import downloadL from "../../../assets/icons/donwloading_white.png";
 import downloadD from "../../../assets/icons/downloading_gray.png";
 import emailL from "../../../assets/icons/email_white.png";
 import emailD from "../../../assets/icons/email_gray.png";
+import linkedin from "../../../assets/images/linkedin.svg"
+import github from "../../../assets/images/github.svg"
 import ThemeButton from "../Theme";
 import { useTheme } from "../../../context/ThemeContext";
 
@@ -29,7 +31,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="h-screen text-gray-800 dark:text-white bg-gray-300 dark:bg-gray-900 flex items-center justify-center"
+      className="h-screen text-gray-800 dark:text-white bg-gray-300 dark:bg-gray-900 flex items-center justify-center px-3 sm:p-0"
     >
       <div className="flex sm:flex-row-reverse flex-col items-center sm:pt-0 pt-28 justify-center sm:gap-12">
         <img
@@ -43,7 +45,7 @@ const Home = () => {
           className="sm:w-2/5 w-full flex flex-col sm:px-0 px-4 sm:items-start items-center gap-4"
         >
           <h1 className="text-4xl sm:text-5xl italic">Izzat Mammadov</h1>
-          <p className="text-lg italic text-justify">
+          <p className="text-md italic text-justify">
             <span ref={typedRef}></span>
           </p>
           <button
@@ -72,6 +74,16 @@ const Home = () => {
               alt="download"
             />
           </a>
+          <div className="flex items-center justify-center w-full gap-10 pt-3">
+          <a className="flex items-center gap-2 hover:text-blue-500 duration-300" target="_blank" href="https://linkedin.com/in/izzatmammadov">
+            <img className="w-8" src={linkedin} alt="linkedin" />
+            Linkedin
+          </a>
+          <a className="flex items-center gap-2 hover:text-blue-500 duration-300" target="_blank" href="https://github.com/izzatmammadov">
+            <img className="w-8" src={github} alt="github" />
+            GitHub
+          </a>
+          </div>
         </div>
       </div>
       <ThemeButton />
